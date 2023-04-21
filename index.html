@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cubo in Three js</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        <div class="row">
+            <label>Brilho</label>
+            <input type="range">
+        </div>
+        <div class="row">
+            <label>Metal</label>
+            <input type="range">
+        </div>
+        <div class="row">
+            <label>Opacidade</label>
+            <input type="range">
+        </div>
+        <div class="row">
+            <label>Cor</label>
+            <input type="color">
+        </div>
+        <div class="row">
+            <label>Mapa</label>
+            <input type="checkbox">
+        </div>
+        <div class="row">
+            <label>Visível</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="row">
+            <div id="grid-objects">
+                <div class="object"></div>
+                <div class="object"></div>
+                <div class="object"></div>
+                <div class="object"></div>
+            </div>
+        </div>
+
+        <button id="expand" onclick="expand(this)">></button>
+    </div>
+
+    <script>
+
+        let opened = true;
+
+        function expand(evt) {
+            opened = !opened;
+
+            if (opened) {
+                document.getElementById("sidebar").style.right = "0px";
+                evt.innerHTML = ">";
+            } else {
+                document.getElementById("sidebar").style.right = "-300px";
+                evt.innerHTML = "<";
+            }
+        }
+
+    </script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "../build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
